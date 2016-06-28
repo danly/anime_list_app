@@ -31,13 +31,12 @@ class AddAnimeBar extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit}>
+      <form className='search-form' onSubmit={this.onFormSubmit}>
         <input
           placeholder="Add an anime"
           value={this.state.term}
           onChange={this.onInputChange}
         />
-        <button type="submit">Look up</button>
       </form>
     );
   }

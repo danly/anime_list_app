@@ -7,9 +7,12 @@ const INITIAL_STATE = {
 };
 
 export default function(state=INITIAL_STATE, action) {
+  console.log("payload here daniel", action.payload)
   switch(action.type) {
+
   case FETCH_ANIME_LIST:
     return { ...state, all: action.payload.data };
+
   case GET_NEW_ANIME:
     if(action.payload.status === 500) {
       return state;
@@ -18,9 +21,10 @@ export default function(state=INITIAL_STATE, action) {
       return state;
     }
     return { ...state, searched_anime: action.payload.data };
+
   case ADD_NEW_ANIME:
-    console.log("payload here", action.payload.data);
     return { ...state, all: action.payload.data };
+
   default:
     return state;
   }

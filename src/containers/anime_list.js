@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchAnimeList } from '../actions/index';
 
+import AnimeItem from '../components/anime_item'
+
+export const LIST_TYPE = "LIST_TYPE";
+
 class AnimeList extends Component {
   componentWillMount() {
     this.props.fetchAnimeList();
@@ -11,9 +15,8 @@ class AnimeList extends Component {
   renderList() {
     return this.props.animes.map((anime) => {
       return(
-        <div
-          key={anime._id}>
-          {anime.title}
+        <div key={anime._id}>
+          <AnimeItem data={anime} type={LIST_TYPE} />
         </div>
       );
     });
@@ -21,7 +24,7 @@ class AnimeList extends Component {
 
   render() {
     return (
-      <div>
+      <div className='anime-list-container'>
         {this.renderList()}
       </div>
     );

@@ -56,3 +56,6 @@
 - Title needs to be of slug type for the anime API
 - Had to send `x-www-form-urlencoded` data for saving a new anime
   - Use `qs` module and `qs.stringify`
+- Constants `SEARCH_TYPE` and `LIST_TYPE` are in two different files could consolidate into one
+### Questions
+- Is it legal to hide elements of a reusable component with CSS???
