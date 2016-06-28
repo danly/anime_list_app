@@ -1,5 +1,16 @@
 #Anime List App
 
+## Setup
+### Required
+- MongoDB
+- `anime_list_backend` app running on `localhost:3001`
+  - https://github.com/danlyg/anime_list_backend
+
+### Initialize
+1. Make sure `localhost:3001` is running with `anime_list_backend`
+2. `npm install`
+3. `npm start`
+
 ## Tech
 - React
 - Redux
@@ -8,7 +19,7 @@
 ### Anime Backend
 - https://market.mashape.com/vikhyat/hummingbird-v1
 - https://hummingbirdv1.p.mashape.com/anime/{id}
-  - id:[Number/Title]
+  - id: **[Number/Title]**
   - EX: http://hummingbird.me/api/v1/anime/bleach
   - DOCs: https://github.com/hummingbird-me/hummingbird
 ### List backend
