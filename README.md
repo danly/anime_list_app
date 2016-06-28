@@ -35,9 +35,11 @@
 ## Road Bumps
 ### Webpack
 - Setting up webpack dev server port and linking with express http server
+
 ### ES6
 - Spread operator `...`
   - It is experimental so it requires `stage-2` babel preset to use
+
 ### Data Concerns
 - DB should store just basic info of anime
 - Status, episodes other changing information should be newly requested
@@ -51,12 +53,14 @@
       - **Pro:** Hook up multiple APIs to redux
       - **Con:** Multiple API domains to manage..
       - **Con:** May have to do more than one GET for each request (**complexity**)
+
 ### Other
 - How Redux/React should handle a 500 error from an external API
 - Title needs to be of slug type for the anime API
 - Had to send `x-www-form-urlencoded` data for saving a new anime
   - Use `qs` module and `qs.stringify`
 - Constants `SEARCH_TYPE` and `LIST_TYPE` are in two different files could consolidate into one
+
 ### Questions
 - Is it legal to hide elements of a reusable component with CSS???
 - Should components that have actions always be class components?

@@ -46,7 +46,6 @@ export function inputCleared(props) {
   }
 }
 
-
 // export function getAnime(id) {
 //   const request = axios.get(`${SERVICE_ROOT_URL}/anime-list/${id}`);
 //
