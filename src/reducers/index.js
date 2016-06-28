@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import AnimeReducer from './reducer_anime';
 
 const rootReducer = combineReducers({
-  state: (state={}) => state
+  animes: AnimeReducer
 });
 
 export default rootReducer;
