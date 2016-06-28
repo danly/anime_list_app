@@ -18,11 +18,15 @@ class AddAnimeBar extends Component {
   }
 
   onFormSubmit(e) {
+    // Converts the term to slug
+    const slugTerm = this.state.term
+      .toLowerCase()
+      .replace(/[^\w ]+/g,'')
+      .replace(/ +/g,'-');
+
     e.preventDefault();
-    this.props.getNewAnime(this.state.term);
-    // filter for saved anime already
-    // if no anime was found then search for a new one
-    // if no results then no results
+
+    this.props.getNewAnime(slugTerm);
   }
 
   render() {

@@ -1,8 +1,9 @@
 import axios from 'axios';
+import qs from 'qs';
 
 export const FETCH_ANIME_LIST = 'FETCH_ANIME_LIST';
 export const GET_NEW_ANIME = 'GET_NEW_ANIME';
-// export const ADD_NEW_ANIME = 'ADD_NEW_ANIME';
+export const ADD_NEW_ANIME = 'ADD_NEW_ANIME';
 // export const GET_ANIME = 'GET_ANIME';
 // export const DELETE_ANIME = 'DELETE_ANIME';
 
@@ -29,15 +30,15 @@ export function getNewAnime(title) {
   };
 }
 
-// export function addNewAnime(props) {
-//   const request = axios.post(`${SERVICE_ROOT_URL}/new`, props);
-//
-//   return {
-//     type: ADD_NEW_ANIME,
-//     payload: request
-//   }
-// }
-//
+export function addNewAnime(props) {
+  const request = axios.post(`${SERVICE_ROOT_URL}/anime-list/new`, qs.stringify(props));
+  console.log("props here", props)
+  return {
+    type: ADD_NEW_ANIME,
+    payload: request
+  }
+}
+
 // export function getAnime(id) {
 //   const request = axios.get(`${SERVICE_ROOT_URL}/${id}`);
 //
