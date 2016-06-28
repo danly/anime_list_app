@@ -59,3 +59,5 @@
 - Constants `SEARCH_TYPE` and `LIST_TYPE` are in two different files could consolidate into one
 ### Questions
 - Is it legal to hide elements of a reusable component with CSS???
+- Should components that have actions always be class components?
+  - Can you dive class -> functional -> class component?

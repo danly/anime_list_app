@@ -1,4 +1,4 @@
-import { GET_NEW_ANIME, FETCH_ANIME_LIST, ADD_NEW_ANIME } from '../actions/index';
+import { GET_NEW_ANIME, FETCH_ANIME_LIST, ADD_NEW_ANIME, INPUT_CLEARED } from '../actions/index';
 
 const INITIAL_STATE = {
   all: [],
@@ -7,7 +7,6 @@ const INITIAL_STATE = {
 };
 
 export default function(state=INITIAL_STATE, action) {
-  console.log("payload here daniel", action.payload)
   switch(action.type) {
 
   case FETCH_ANIME_LIST:
@@ -24,6 +23,9 @@ export default function(state=INITIAL_STATE, action) {
 
   case ADD_NEW_ANIME:
     return { ...state, all: action.payload.data };
+
+  case INPUT_CLEARED:
+    return { ...state, searched_anime: null };
 
   default:
     return state;

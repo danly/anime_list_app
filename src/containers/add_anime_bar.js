@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getNewAnime } from '../actions/index';
+import { getNewAnime, inputCleared } from '../actions/index';
 
 class AddAnimeBar extends Component {
   constructor(props) {
@@ -15,6 +15,7 @@ class AddAnimeBar extends Component {
 
   onInputChange(e) {
     this.setState({term: e.target.value});
+    this.props.inputCleared();
   }
 
   onFormSubmit(e) {
@@ -43,7 +44,7 @@ class AddAnimeBar extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getNewAnime }, dispatch);
+  return bindActionCreators({ getNewAnime, inputCleared }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(AddAnimeBar);

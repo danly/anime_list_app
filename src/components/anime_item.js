@@ -6,9 +6,7 @@ import AnimeItemButtons from './anime_item_buttons';
 import { LIST_TYPE } from '../containers/anime_list';
 import { SEARCH_TYPE } from '../containers/searched_anime';
 
-export default (props) => {
-  const {data, type} = props;
-
+export default ({data, type, onDeleteAnime}) => {
   return (
     <div id={data._id}
       data-hum-id={data.hum_id}
@@ -18,7 +16,7 @@ export default (props) => {
 
       <div className='overlay'>
         <AnimeDetail title={data.title} synopsis={data.synopsis} />
-        <AnimeItemButtons />
+        <AnimeItemButtons id={data._id} />
       </div>
     </div>
   );
